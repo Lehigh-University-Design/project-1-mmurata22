@@ -1,0 +1,95 @@
+body{
+    background-color: rgba(255, 255, 255, 1);
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+}
+
+.button_bar{
+    background-image: url(/images/icons-1.png);
+    height: 50px;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: right;
+    padding-right: -20px;
+}
+
+.window_header{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 50px;
+    width: 1000px;
+    border: 5px solid #000000;
+    padding: 10px;
+    background-color: #000000;
+}
+
+.header_box{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -2px;
+    margin-bottom: 50px;
+    width: 1000px;
+    border: 5px solid #000000;
+    border-radius: 3px;
+    padding: 10px;
+    position: relative;
+    box-shadow: 10px 20px;
+}
+
+.first_title{
+    color:#000000;
+    font-family: "VT323";
+    font-size: 50px;
+    text-align: right;
+    padding-left: 500px;
+}
+
+.planet_acsii{
+    color:#000000;
+    font-family: "VT323";
+    font-size: 30px;
+}
+
+.icons {
+    position: fixed;
+    top: 10px;
+    left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px;
+    z-index: 999;
+}
+
+.icon_below{
+    margin-top: 40px;
+}
+
+.button.icon {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    position: relative;
+}
+
+button.icon:hover::before {
+    content: '';
+    position: absolute;
+    top: -7px;
+    left: -7px;
+    right: -7px;
+    bottom: -7px;
+    background-color: rgba(200, 200, 200, 0.7);
+    z-index: -1;
+    border: 1px dotted #333;
+}
+
+.icon_text{
+    font-family: "VT323";
+    font-size: 20px;
+    color: black;
+}
