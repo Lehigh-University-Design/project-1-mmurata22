@@ -1,22 +1,25 @@
+/* ALL (BG COLOR) */
 body{
     background-color: rgba(255, 255, 255, 1);
 }
 
+/* GENERAL POPUP LAYOUT */
 .container {
-    display: flex;
-    flex-direction: row;
+    display: none;
 }
-
-.button_bar{
-    background-image: url(/images/icons-1.png);
+.x_button{
+    background-image: url(/images/close-icon.png);
     height: 50px;
-    width: 100%;
+    width: 60px;
+    padding: 0;
     background-repeat: no-repeat;
-    background-position: right;
-    padding-right: -20px;
+    background-color: transparent;
+    border: none;
+    background-size: contain;
+    background-position: center;
 }
-
-.window_header{
+.header{
+    display: flex;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -24,8 +27,8 @@ body{
     border: 5px solid #000000;
     padding: 10px;
     background-color: #000000;
+    position: relative;
 }
-
 .header_box{
     margin-left: auto;
     margin-right: auto;
@@ -38,21 +41,20 @@ body{
     position: relative;
     box-shadow: 10px 20px;
 }
-
-.first_title{
+.first_title{ /* INTERPLANETARY INTERNET */
     color:#000000;
     font-family: "VT323";
     font-size: 50px;
     text-align: right;
     padding-left: 500px;
 }
-
 .planet_acsii{
     color:#000000;
     font-family: "VT323";
     font-size: 30px;
 }
 
+/* ICON FLEX (LEFT) */
 .icons {
     position: fixed;
     top: 10px;
@@ -63,11 +65,9 @@ body{
     padding: 10px;
     z-index: 999;
 }
-
-.icon_below{
+.icon_below{ /* NOTE: THIS IS ICONS BELOW FIRST ICON FOR PADDING BETWEEN ICONS */
     margin-top: 40px;
 }
-
 .button.icon {
     background: none;
     border: none;
@@ -75,7 +75,6 @@ body{
     cursor: pointer;
     position: relative;
 }
-
 button.icon:hover::before {
     content: '';
     position: absolute;
@@ -87,13 +86,13 @@ button.icon:hover::before {
     z-index: -1;
     border: 1px dotted #333;
 }
-
 .icon_text{
     font-family: "VT323";
     font-size: 20px;
     color: black;
 }
 
+/* LOWER NAVBAR */
 .lower_navbar{
     position: fixed;
     width: 100%;
@@ -108,7 +107,6 @@ button.icon:hover::before {
     z-index: 9999;
     font-family: "VT323";
 }
-
 .lower_button{
     padding: 10px 15px 10px 10px;
     margin-top: 2px;
@@ -121,18 +119,10 @@ button.icon:hover::before {
     font-family: "VT323";
     text-align: center;
 }
-
 .gap{
     color: black;
     background-color: black;
     width: 4px;
     height: 0px;
     border: none;
-}
-
-.hidden-div{
-    display: none;
-    background-color: black;
-    border: 2px solid black;
-    border-radius: 2px; 
 }

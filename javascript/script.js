@@ -1,14 +1,14 @@
 document.addEventListener("DOMContentLoaded", function() {
     const draggableElements = document.querySelectorAll(".draggable");
   
-    draggableElements.forEach((element) => {
+    draggableElements.forEach((element) => { // Looks for clicks
       element.addEventListener("mousedown", onMouseDown);
     });
   
     let offsetX, offsetY;
     let draggedElement = null;
   
-    function onMouseDown(e) {
+    function onMouseDown(e) { // When click found, allows popup to be dragged
       if (e.target.classList.contains("header")) {
         draggedElement = e.currentTarget;
         const rect = draggedElement.getBoundingClientRect();
@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    function onMouseMove(e) {
+    function onMouseMove(e) { // When click + move found, allows popup to be dragged
       if (draggedElement) {
         const newX = e.clientX - offsetX;
         const newY = e.clientY - offsetY;
@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    function onMouseUp() {
+    function onMouseUp() { // When click removed, disables drag
       if (draggedElement) {
         draggedElement.classList.remove("dragging");
         draggedElement = null;
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     }
   
-    function bringToFront(element) {
+    function bringToFront(element) { // When clicked, draggable comes to front
       const divs = document.querySelectorAll(".draggable");
       let highestZIndex = 0;
   
@@ -54,12 +54,12 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
 
-  function toggleDropUp() {
+  function toggleDropUp() { 
     var dropUpContent = document.getElementById("dropUpContent");
     dropUpContent.classList.toggle("show");
   }
   
-  document.addEventListener("click", function(event) {
+  document.addEventListener("click", function(event) {  
     var dropUpContent = document.getElementById("dropUpContent");
     var dropUpButton = document.querySelector(".box");
   
@@ -68,21 +68,21 @@ document.addEventListener("DOMContentLoaded", function() {
     }
   });
   
-  function openTab(divNumber) {
+  function openTab(divNumber) { // When click icon, opens popup
     var divToOpen = document.getElementById("div" + divNumber);
     divToOpen.style.display = "block";
     var tabToOpen = document.getElementById("tab" + divNumber);
     tabToOpen.style.display = "inline-block";
   }
   
-  function closeTab(divNumber) {
+  function closeTab(divNumber) { // When "X" clicked, closes popup
     var divToClose = document.getElementById("div" + divNumber);
     divToClose.style.display = "none";
     var tabToClose = document.getElementById("tab" + divNumber);
     tabToClose.style.display = "none";
   }
   
-  function loadFrame (elm){
+  function loadFrame (elm){ 
       var frame1 = document.getElementById('frame2');
       frame1.src = elm.dataset.src;
   }
@@ -99,7 +99,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
-  function updateTime() {
+  function updateTime() { // For clock in corner
     const now = new Date();
     const hours = String(now.getHours()).padStart(2, '0');
     const minutes = String(now.getMinutes()).padStart(2, '0');
@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
     let imagesVisible = false;
     
-    toggleButton.addEventListener("click", function () {
+    toggleButton.addEventListener("click", function () { 
         if (imagesVisible) {
             images.forEach(image => {
                 image.style.display = "none";
