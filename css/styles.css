@@ -4,6 +4,13 @@ body{
 }
 
 /* GENERAL POPUP LAYOUT */
+.header_title{
+    color: white;
+    font-family: "VT323";
+    font-size: 45px;
+    padding: 5px;
+    margin: 0px;
+}
 .container {
     display: none;
 }
@@ -20,6 +27,7 @@ body{
 }
 .header{
     display: flex;
+    justify-content: space-between;
     margin-left: auto;
     margin-right: auto;
     margin-top: 50px;
@@ -40,6 +48,7 @@ body{
     padding: 10px;
     position: relative;
     box-shadow: 10px 20px;
+    background-color: white;
 }
 .first_title{ /* INTERPLANETARY INTERNET */
     color:#000000;
@@ -53,6 +62,17 @@ body{
     font-family: "VT323";
     font-size: 30px;
 }
+/* Adjust draggable class styles */
+.draggable {
+    cursor: move;
+    z-index: 2;
+    position: relative;
+}
+
+/* DIV 2: WHAT'S INTERPLANETARY? */ 
+#div2{
+    display: block;
+}
 
 /* ICON FLEX (LEFT) */
 .icons {
@@ -63,7 +83,7 @@ body{
     flex-direction: column;
     align-items: center;
     padding: 10px;
-    z-index: 999;
+    z-index: 0;
 }
 .icon_below{ /* NOTE: THIS IS ICONS BELOW FIRST ICON FOR PADDING BETWEEN ICONS */
     margin-top: 40px;
@@ -92,6 +112,29 @@ button.icon:hover::before {
     color: black;
 }
 
+/* POP UP STYLIZATIONS (NOT IN FIRST) */
+.content{
+    font-family: "VT323";
+    font-size: 20px;
+}
+.popup_img{
+    width: 250px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+.popup_img_exception{
+    width: 500px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+/* HIDE POP UPS NOT MEANT TO BE THERE */
+#div2, #div3, #div4, #div5, #div6{
+    display: none;
+}
+
 /* LOWER NAVBAR */
 .lower_navbar{
     position: fixed;
@@ -104,7 +147,7 @@ button.icon:hover::before {
     background-color: black;
     font-size: 14px;
     text-decoration: none;
-    z-index: 9999;
+    z-index: 2;
     font-family: "VT323";
 }
 .lower_button{

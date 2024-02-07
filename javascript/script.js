@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", function() {
         const rect = draggedElement.getBoundingClientRect();
         offsetX = e.clientX - rect.left;
         offsetY = e.clientY - rect.top;
-        draggedElement.classList.add("dragging");
+        draggedElement.style.zIndex = 9999;
         bringToFront(draggedElement);
         document.addEventListener("mousemove", onMouseMove);
         document.addEventListener("mouseup", onMouseUp);
@@ -27,13 +27,15 @@ document.addEventListener("DOMContentLoaded", function() {
         const newY = e.clientY - offsetY;
         draggedElement.style.left = `${newX}px`;
         draggedElement.style.top = `${newY}px`;
+
+        draggedElement.style.zIndex = 9999;
       }
     }
   
     function onMouseUp() { // When click removed, disables drag
       if (draggedElement) {
-        draggedElement.classList.remove("dragging");
         draggedElement = null;
+        draggedElement.style.zIndex = "";
         document.removeEventListener("mousemove", onMouseMove);
         document.removeEventListener("mouseup", onMouseUp);
       }
@@ -69,6 +71,7 @@ document.addEventListener("DOMContentLoaded", function() {
   });
   
   function openTab(divNumber) { // When click icon, opens popup
+    console.log("Opening tab: " + divNumber);
     var divToOpen = document.getElementById("div" + divNumber);
     divToOpen.style.display = "block";
     var tabToOpen = document.getElementById("tab" + divNumber);
@@ -99,18 +102,18 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
   
-  function updateTime() { // For clock in corner
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const timeString = `${hours}:${minutes}:${seconds}`;
+  // function updateTime() { // For clock in corner
+  //  const now = new Date();
+  //  const hours = String(now.getHours()).padStart(2, '0');
+  //  const minutes = String(now.getMinutes()).padStart(2, '0');
+  //  const seconds = String(now.getSeconds()).padStart(2, '0');
+  //  const timeString = `${hours}:${minutes}:${seconds}`;
   
-    document.getElementById('clock').textContent = timeString;
-  }
+  //  document.getElementById('clock').textContent = timeString;
+  //}
   
-  setInterval(updateTime, 1000); // Update every 1000ms (1 second)
-  updateTime(); // Initial call to set the time immediately
+  //setInterval(updateTime, 1000); // Update every 1000ms (1 second)
+  //updateTime(); // Initial call to set the time immediately
   
   document.addEventListener("DOMContentLoaded", function () {
     const toggleButton = document.getElementById("toggleButton");
