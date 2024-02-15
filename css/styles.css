@@ -15,7 +15,7 @@ body{
     display: none;
 }
 .x_button{
-    background-image: url(../images/close-icon.png);
+    background-image: url(images/close-icon.png);
     height: 50px;
     width: 60px;
     padding: 0;
